@@ -1,0 +1,77 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container text-center">
+          <h1 class="display-4 text-white animated slideInDown mb-4">Investment History</h1>
+
+      </div>
+  </div>
+  <!-- Page Header End -->
+  {% include 'navigation/_alert.html'%}
+
+  <div class="container-fluid mt-5 mb-5">
+     
+          <div class="container">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Stakings</button>
+                  </li>
+                 
+                </ul>
+              
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                      <table class="table col-md-12">
+                          <thead>
+                            <tr>
+                              <th scope="col-md-12">Scores</th>
+                              <th scope="col-md-12">Date</th>
+                              <th scope="col-md-12 ">Bet Amount</th>
+                              <th scope="col-md-12">Match</th>
+                              <th scope="col-md-12">Status</th>
+                              <th scope="col-md-12">Profit</th>
+                              <th scope="col-md-12">Remark</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <script>
+                              var a = 1
+                            </script>
+                            {% for i in item %}
+                            
+                              <th scope="row">{{i.scores}}</th>
+                              <td>{{i.listingDate}}</td>
+                              <td>{{i.amount}}</td>
+                              <td>{{i.match}}</td>
+                              <td>{{i.status}}</td>
+                              <td>{{i.profit}}</td>
+                              <td>{{i.status}}</td>
+                             
+                            </tr>
+                            {% endfor %}
+                           
+                           
+                          </tbody>
+                        </table>
+                  </div>
+                  
+                </div>
+          </div>
+
+  </div>
+ 
+  </div>
+ 
+ 
+ 
+</div>
+{% endblock %}

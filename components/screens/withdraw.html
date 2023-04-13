@@ -1,0 +1,110 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+  <!-- Page Header Start -->
+  <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <h1 class="display-4 text-white animated slideInDown mb-4">Withdrawal</h1>
+
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+           
+            <div class="col-lg-12 col-sm-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="h-100">
+                    
+                    <div class="bg-light border-bottom border-5 border-primary text-center rounded p-4 mb-4">
+                        <p class="text-dark mb-2 text-center">You have not bound your wallet address</p>
+                        <a class="btn btn-primary py-2 px-3 me-3" aria-label="close">
+                           cancel
+                        </a>
+                        <a class="btn btn-outline-primary py-2 px-3" href="">
+                            ok
+                           
+                        </a>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+           
+            <div class="col-lg-12 col-sm-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="h-100">
+                    <div class="h-100 bg-info rounded-3 p-5">
+                        {% include 'navigation/_alert.html'%}
+                        <h1 class="text-center">Withdrawal Form</h1>
+                        <form action="{% url 'withdrawal'%}"  method="post" >
+                            {% csrf_token %}
+
+                            
+                            <div class="row g-3">
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" name="user" class="form-control bg-light border-0" id="name" value="{{user.username}}" hidden>
+                                        <input type="text" name="balance" class="form-control bg-light border-0" id="name" value="{{user.amount}}" hidden>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" name="amount" class="form-control bg-light border-0" id="name" placeholder="Amount">
+                                        <label for="name">Amount to Withdrawal</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <select class="form-control bg-light border-0" name="chain" >
+                                            <option>Chain Name</option>
+                                            <option>Trc 20</option>
+                                            <option>Erc 20</option>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                                <div class="dropdown show">
+
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control bg-light border-0" id="email" name="password" placeholder="Your Password">
+                                        <label for="email">Withdrawal Password</label>
+                                    </div>
+                                </div>
+                              
+                                <div class="col-12 text-center mt-5">
+                                    <button class="btn btn-secondary px-5" type="submit" style="height: 60px;">
+                                      Submit
+                                       
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                   
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

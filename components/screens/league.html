@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header  " data-wow-delay="0.1s">
+        <div class="container text-center">
+            <div class="col-lg-6 col-md-12 mb-5 offset-lg-3 tab">
+                
+            </div>
+           
+        </div>
+    
+    <!-- Page Header End -->
+
+
+    <!-- Causes Start -->
+    <div class="container-xxl tabcontent   "id="Login">
+        <div class="container ">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+               
+                <h1 class="display-6 mb-5 text-light">Leagues</h1>
+           
+           
+              
+            </div> 
+            
+        <div class="container-fluid">
+            
+            <div class="row r mb-5">
+            {% for item in response %}
+                <a href="" class="col-lg-4 col-sm-12 col-md-6 mt-3">
+                    <div class="card ">
+                        <h5 class="card-header"><small>【{{item.league}}】</small></h5>
+                        <!-- <img src="{{item.leagueLogo}}" style="height: 50px; width: 50px; border-radius:50%;" alt="" srcset=""> -->
+                      </div>
+                    </a>       
+            
+            {% endfor %}
+        </div>
+        </div>
+        
+    </div>
+    </div>
+      
+</div>
+
+
+{% endblock %}

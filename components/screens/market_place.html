@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+ <!-- Page Header Start -->
+ <div class="container-fluid page-header  " data-wow-delay="0.1s">
+    <div class="container text-center">
+        <div class="col-lg-6 col-md-12 mb-5 offset-lg-3 tab">
+            <!-- <div class="btn-group d-flex justify-content-around">
+                <input type="radio" class="btn-check tablinks" name="btnradio"
+                    id="btnradio1" onclick="LogOn(event, 'Login')"  checked>
+                <label class="btn btn-lights py-6" style="background-color: #FF6F0F; color: #fff;" for="btnradio1"> All Matches</label>
+
+               
+
+               
+            </div> -->
+        </div>
+       
+    </div>
+
+<!-- Page Header End -->
+
+
+<!-- Causes Start -->
+<div class="container-xxl tabcontent   py-5"id="Login">
+
+    <a class="btn btn-primary py-2 px-3 animated slideInDown text-center justify-content-center offset-lg-5 offset-sm-2 offset-2" href="/predict" style="align-items: left;">
+        Prediction
+        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+    </a>
+
+    <div class="container py-5">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+        </div>
+        <div class="row g-4 justify-content-center mb-5">
+            
+
+            {% for item in data %}
+                
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s" style=" border-bottom-left-radius: 25px">
+                    <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
+                        <div class="text-center p-4 pt-0">
+                            <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
+                                <small>{{item.league}}</small>
+                            </div>
+                            <h5 class="mb-3"> <div class="d-flex justify-content-between">
+                                <img src="{{item.homeLogo}}" style="height: 50px; width: 50px; border-radius:50%;" alt="" srcset="">
+                                <p class="text-dark"> <small class="text-body">Vs</small></p>
+                                <img src="{{item.awaylogo}}" style="height: 50px; width: 50px; border-radius:50%;" alt="" srcset="">
+                            </div></h5>
+                            <h4>{{item.score}}</h4>
+                            <p>Time: {{item.matchTime}}</p> 
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+               
+            
+            {% endfor %}
+
+           
+        </div>
+        
+    </div>
+</div>
+</div>
+
+<script>
+    document.querySelector('#Register').style.display="none";
+    function LogOn(evt, SignUp) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(SignUp).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+{% endblock %}
+

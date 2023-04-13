@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 mb-5">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video autoplay loop>
+                    <source src="static/img/3cb7adb388bc76d78c180a4c977ba2b6.mp4" type="video/mp4">
+                  </video>
+                <!-- <img class="w-100" src="static/img/pes-2020-demo_1564651453579.gif" alt="Image"> -->
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="h-100  p-5" style="
+                               
+                            background: rgba(255, 255, 255, 0.14);
+                            border-radius: 16px;
+                            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                            backdrop-filter: blur(5.7px);
+                            -webkit-backdrop-filter: blur(5.7px);
+                            border: 1px solid rgba(255, 255, 255, 0.21);">
+                                 <h1 class="fw-bold text-primary m-0">Espn<span class="text-white">01</span></h1>
+                                 {% include 'navigation/_alert.html'%}
+                                    <form action="{% url 'register' %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="col-12 mb-5 tab">
+                                            <div class="btn-group d-flex justify-content-around">
+                                                <!-- <input type="radio" class="btn-check tablinks" name="btnradio"
+                                                    id="btnradio3" onclick="LogOn(event, 'Register')"  checked> -->
+                                                <label class="btn btn-light py-6" for="btnradio3"> Register</label>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="row g-3 tabcontent wow fadeIn" id="Register">
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <input type="text" name="username" class="form-control bg-dark border-0"
+                                                        id="name" placeholder="Your Name">
+                                                    <label for="name"><i class="fa fa-user-plus"></i> Input unique username</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <input type="text" name="nickname" class="form-control bg-dark border-0"
+                                                        id="email" placeholder="Your Email">
+                                                    <label for="email"> <i class="fa fa-id-card"></i> Input Nickname</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <input type="text" name="email" class="form-control bg-dark border-0"
+                                                        id="email" placeholder="Your Email">
+                                                    <label for="email"> <i class="fa fa-id-card"></i> Input Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control bg-dark border-0"
+                                                        id="email" placeholder="Your Email">
+                                                    <label for="email"> <i class="fa fa-copyright"></i> Invitation code</label>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <input type="password" name="password" class="form-control bg-dark border-0"
+                                                        id="email" placeholder="Your Email">
+                                                    <label for="email"> <i class="fa fa-lock"></i> Enter Password</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <input type="password" name="password2" class="form-control bg-dark border-0"
+                                                        id="email" placeholder="Your Email">
+                                                    <label for="email"> <i class="fa fa-key"></i> Confirm Password</label>
+                                                </div>
+                                            </div> 
+                                            <div class="col-12">
+                                                <button class="btn btn-primary px-5" type="submit" style="height: 60px;">
+                                                    Register  to Game
+                                                    <div
+                                                        class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                                                        <i class="fa fa-arrow-right"></i>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <script>
+                document.querySelector('#Register').style.display="none";
+                function LogOn(evt, SignUp) {
+                  var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                  for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                  }
+                  tablinks = document.getElementsByClassName("tablinks");
+                  for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                  }
+                  document.getElementById(SignUp).style.display = "block";
+                  evt.currentTarget.className += " active";
+                }
+                </script>
+           -->
+    </div>
+</div>
+<!-- Carousel End --> 
+
+
+{% endblock %}
